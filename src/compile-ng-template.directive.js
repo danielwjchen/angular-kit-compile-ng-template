@@ -11,8 +11,8 @@
             restrict: 'A',
             replace: true,
             link: function($scope, $element, $attr) {
-                $scope.$watch($attr.ngKitCompileNgTemplate, function() {
-                    $element.html($scope[$attr.ngKitCompileNgTemplate]);
+                $scope.$watch($attr.ngKitCompileNgTemplate, function(html) {
+                    $element.html(html);
                     $compile($element.contents())($scope);
                 });
             }
